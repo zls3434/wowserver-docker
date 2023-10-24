@@ -3,6 +3,8 @@
 > 一个基于TrinityCore的WOW服务端docker的镜像编译包
 > 
 > WOW服务端基于Wolk 3.3.5a版本,客户端版本12340
+> 
+> 国内仓库: [wowserver-docker](https://gitee.com/LostDream/wowserver-docker "wowserver-docker - Gitee")
 
 ## 需求
 
@@ -97,7 +99,7 @@ docker-compose.yaml
 version: '3'
 services:
   wow-auth:
-    image: zls3434/wowserver-auth:v3.3.5-20231023
+    image: zls3434/wowserver-auth:v3.3.5
     container_name: wow-auth
     extra_hosts:
       - host.docker.internal:host-gateway
@@ -113,7 +115,7 @@ services:
       - ./etc/authserver.conf:/wowserver/etc/authserver.conf
       - ./logs:/wowserver/logs
   wow-world:
-    image: zls3434/wowserver-world:v3.3.5-20231023
+    image: zls3434/wowserver-world:v3.3.5
     container_name: wow-world
     stdin_open: true # docker run -i
     tty: true        # docker run -t
